@@ -5,9 +5,33 @@
     x:Class="travel_record_app.Pages.ProfilePage">
     <ContentPage.Content>
 
-        <StackLayout>
+        <StackLayout Margin="20, 40, 20, 0">
 
-            <Label>History Page</Label>
+            <Label x:Name="PostCountLabel"
+                   Text="--"
+                   HorizontalOptions="Center"
+                   TextColor="DodgerBlue"
+                   FontAttributes="Bold" />
+
+            <Label Text="posts"
+                   HorizontalOptions="Center"
+                   TextColor="LightGray" />
+
+            <ListView x:Name="CategoriesListView">
+
+                <ListView.ItemTemplate>
+
+                    <DataTemplate>
+
+                        <!-- ListView.ItemSource - dictionary -->
+                        <TextCell Text="{Binding Path=Key}"
+                                  Detail="{Binding Path=Value}" />
+
+                    </DataTemplate>
+
+                </ListView.ItemTemplate>
+
+            </ListView>
 
         </StackLayout>
         

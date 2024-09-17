@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Maps; // todo
+using SQLite;
 // using .. CrossGeolocator, Plugin, Position (in .Maps)
 
 using travel_record_app.Models;

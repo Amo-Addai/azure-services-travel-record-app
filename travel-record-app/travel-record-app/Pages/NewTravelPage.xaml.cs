@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 
 using Xamarin.Forms;
-// using Xamarin.Forms.Xaml; // todo: is namespace default-required
-// using .. CrossGeolocator, SQLiteConnection
+using SQLite;
+// using .. CrossGeolocator
 
 using travel_record_app.Models;
 using travel_record_app.Logic;

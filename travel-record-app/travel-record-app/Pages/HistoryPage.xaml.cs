@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-// using .. SQLiteConnection
 
 using Xamarin.Forms;
+using SQLite;
 
 using travel_record_app.Models;
 
