@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "CgmcpJXup1R89MtsG7liqM+hf2NpqLlgEk7wE5HeHB74DeuAFyTue8nJmzJzD+JZRBqmb+Tpl5uYMXkYOmZ1IQ==",
+  "success": true,
+  "projectFilePath": "/Users/kwadwo/Desktop/AUTOMAN/autocode/github/auto_portfolios/auto-portfolio - samples/NEW/azure-services-xamarin-travel-record-app/travel-record-app/travel-record-app.iOS/travel-record-app.iOS.csproj",
+  "expectedPackageFiles": [
+    "/Users/kwadwo/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
+    "/Users/kwadwo/.nuget/packages/xamarin.essentials/1.7.0/xamarin.essentials.1.7.0.nupkg.sha512",
+    "/Users/kwadwo/.nuget/packages/xamarin.forms/5.0.0.2196/xamarin.forms.5.0.0.2196.nupkg.sha512"
+  ],
+  "logs": []
+}

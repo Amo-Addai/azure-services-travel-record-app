@@ -1,0 +1,67 @@
+﻿<Properties StartupConfiguration="{08C267A3-52ED-49BD-A440-D963F73AEFB5}|Default">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.Pixel_3a_API_32_arm64-v8a" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="travel-record-app/travel-record-app/App.xaml.cs">
+    <Files>
+      <File FileName="travel-record-app/travel-record-app/Setup/setup.txt" />
+      <File FileName="travel-record-app/travel-record-app/AssemblyInfo.cs" />
+      <File FileName="travel-record-app/travel-record-app/App.xaml" Line="34" Column="1" />
+      <File FileName="travel-record-app/travel-record-app/App.xaml.cs" Line="30" Column="10" />
+      <File FileName="travel-record-app/travel-record-app/MainPage.xaml" />
+      <File FileName="travel-record-app/travel-record-app/MainPage.xaml.cs" Line="20" Column="1" />
+      <File FileName="travel-record-app/travel-record-app/Pages/LoginPage.xaml" />
+      <File FileName="travel-record-app/travel-record-app/Pages/LoginPage.xaml.cs" />
+      <File FileName="travel-record-app/travel-record-app/Pages/HomePage.xaml" />
+      <File FileName="travel-record-app/travel-record-app/Pages/HomePage.xaml.cs" />
+      <File FileName="travel-record-app/travel-record-app/Models/Post.cs" />
+      <File FileName="travel-record-app/travel-record-app/Pages/NewTravelPage.xaml" />
+      <File FileName="travel-record-app/travel-record-app/Pages/NewTravelPage.xaml.cs" />
+      <File FileName="travel-record-app/travel-record-app/Pages/HistoryPage.xaml" />
+      <File FileName="travel-record-app/travel-record-app/Pages/HistoryPage.xaml.cs" />
+      <File FileName="travel-record-app/travel-record-app/Pages/MapPage.xaml" />
+      <File FileName="travel-record-app/travel-record-app/Pages/MapPage.xaml.cs" />
+      <File FileName="travel-record-app/travel-record-app/Helpers/Constants.cs" />
+      <File FileName="travel-record-app/travel-record-app/Models/Venue.cs" />
+      <File FileName="travel-record-app/travel-record-app/Logic/VenueLogic.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="travel-record-app" expanded="True">
+            <Node name="travel-record-app" expanded="True">
+              <Node name="Assets" expanded="True">
+                <Node name="Images" expanded="True" />
+              </Node>
+              <Node name="Helpers" expanded="True" />
+              <Node name="Logic" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Pages" expanded="True">
+                <Node name="HistoryPage.xaml" expanded="True" />
+                <Node name="HomePage.xaml" expanded="True" />
+                <Node name="LoginPage.xaml" expanded="True" />
+                <Node name="MapPage.xaml" expanded="True" />
+                <Node name="NewTravelPage.xaml" expanded="True" />
+              </Node>
+              <Node name="Setup" expanded="True" />
+              <Node name="App.xaml" expanded="True">
+                <Node name="App.xaml.cs" selected="True" />
+              </Node>
+              <Node name="MainPage.xaml" expanded="True" />
+            </Node>
+            <Node name="travel-record-app.Android" expanded="True" />
+            <Node name="travel-record-app.iOS" expanded="True">
+              <Node name="Resources" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.travel-record-app.Android FirstBuild="True" PreferredExecutionTarget="Android.Pixel_3a_API_32_arm64-v8a" />
+  <MonoDevelop.Ide.ItemProperties.travel-record-app.iOS FirstBuild="True" />
+</Properties>
