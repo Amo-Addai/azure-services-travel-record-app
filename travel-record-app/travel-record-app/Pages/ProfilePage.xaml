@@ -2,7 +2,7 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="travel_record_app.Pages.ProfilePage">
+    x:Class="travelrecordapp.Pages.ProfilePage">
     <ContentPage.Content>
 
         <StackLayout Margin="20, 40, 20, 0">
@@ -23,7 +23,7 @@
 
                     <DataTemplate>
 
-                        <!-- ListView.ItemSource - dictionary -->
+                        <!-- ListView.ItemsSource - dictionary -->
                         <TextCell Text="{Binding Path=Key}"
                                   Detail="{Binding Path=Value}" />
 

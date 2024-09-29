@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using travel_record_app.Helpers;
+using travelrecordapp.Helpers;
 
-namespace travel_record_app.Models
+namespace travelrecordapp.Models
 {
 
     public class Venue

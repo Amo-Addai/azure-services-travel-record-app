@@ -2,8 +2,8 @@
 <TabbedPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:travel_record_app.Pages"
-    x:Class="travel_record_app.Pages.HomePage">
+    xmlns:local="clr-namespace:travelrecordapp.Pages"
+    x:Class="travelrecordapp.Pages.HomePage">
 
     <TabbedPage.ToolbarItems> <!-- not required - all children are already assigned to ContentPage .Content-->
 

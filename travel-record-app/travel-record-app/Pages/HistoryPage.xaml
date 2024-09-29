@@ -2,7 +2,7 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="travel_record_app.Pages.HistoryPage">
+    x:Class="travelrecordapp.Pages.HistoryPage">
     <ContentPage.Content>
 
         <ListView x:Name="PostListView">

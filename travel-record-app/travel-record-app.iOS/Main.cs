@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace travel_record_app.iOS
+namespace travelrecordapp.iOS
 {
     public class Application
     {

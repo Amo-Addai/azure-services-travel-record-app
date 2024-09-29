@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 
-namespace travel_record_app.Pages
+namespace travelrecordapp.Pages
 {
     public partial class SamplePage : ContentPage
     {

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace travel_record_app.Pages
+namespace travelrecordapp.Pages
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
+    //[XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NewTravelTabbedPage : TabbedPage
     {
         public NewTravelTabbedPage ()

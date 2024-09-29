@@ -6,9 +6,9 @@ using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
 
-namespace travel_record_app.Droid
+namespace travelrecordapp.Droid
 {
-    [Activity(Label = "travel_record_app", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize )]
+    [Activity(Label = "travelrecordapp", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize )]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -19,7 +19,10 @@ namespace travel_record_app.Droid
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
             // todo: install Xamarin.Forms.Maps NuGet package
-            // Xamarin.FormMaps.Init(this, savedInstanceState); // Maps Package
+            Xamarin.FormMaps.Init(this, savedInstanceState); // Maps Package
+
+            // initialize app's Azure Services
+            CurrentPlatform.Init();
 
             // todo: can be used in App(string) override
             string dbPath = Path.Combine(

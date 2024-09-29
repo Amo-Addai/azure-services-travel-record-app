@@ -6,6 +6,7 @@
     - Xam.Plugin.Geolocator
     - Microsoft.Net.Http
     - Newtonsoft.Json
+    - Microsoft.Azure.Mobile.Client
 
 
 - Setup & Enable Google Cloud API for Google Maps Android API
@@ -13,3 +14,61 @@
     - Add API key AndroidManifest.xml meta-data
 
 
+- Setup MS Azure account
+    - Ensure all resources' locations are consistent: eg. South Central US (or any other default)
+    - New Web + Mobile > Mobile App
+        - app name: travelrecordapp
+        - choose subscription (or create new)
+        - new resource group: travelrecordapp
+        - create new app service plan/location
+        - can pin to dashboard if required
+        - Create
+    - sets up all mobile-required resources
+        - app service, dbs, weatherstream, etc
+    - go to Mobile App service
+        - side-nav to Easy tables
+        - create new database / data connection
+            - type: SQL Db, configure settings
+            - Create a new database
+                - set name: travelrecordapp_db
+                - target server: Create a new server
+                    - set server name: travelrecordapp
+                    - set admin login & password
+                    - set location: South Central US (default)
+                    - default: allow azure services to access server
+                    - Select (the just created target server)
+                - select preferred pricing tier (Free is applicable for this service)
+                - default collation
+                - Select (the just created SQL Db)
+           - default Connection string: MS_TableConnectionString & OK
+           - OK again (for 'Add data connection')
+        - wait for data connection to complete instantiation & go back to base-navigation
+        - re-navigate to Easy tables > 'Continue' to configure Easy Tables/Easy APIs
+            - confirm you already have a data connection
+            - acknowledge App Service - Easy Tables usage Initialization
+            - Create (default-name: TodoItem) table
+            - you can check the top-nav notifications banner to know when App Service app backend is done initializing
+        - now, you can add new Easy tables, since data connection has been created
+        - Add a table
+            - set Name: Post; leave all default permissions; OK
+            - add any extra Tables, for any other data-models required:
+                User, ..
+
+        -
+        - still in App Service, side-nav to DEPLOYMENT - Quickstart section
+            - Xamarin.Forms
+            - Connect a database should already be completed
+            - Create a table API with C# (or Node.js/..) Backend language & acknowledge
+            - Create (default TodoItem) table - will set App's Database table API
+            - Scroll down to Configure your client application (while App Service app backend initializes - in top-nav notifications dropdown)
+                - Create a new app / Connect an existing app (connect to this existing app)
+                - copy setup code for MobileServiceClient (& sample TodoItem class, if it was needed - but it isn't, here)
+                    - paste code in app's App.xaml.cs:
+                        MobileServiceClient as App class' prop (& create models for any sample classes copied too)
+                - when App Service backend is done initializing, close Xamarin.Forms pane
+            - side-nav to MOBILE > Easy tables
+                - delete default TodoItem table
+                - add tables again: set Name & leave all default permissions, for each:
+                    Post, User, (any other data-models required)
+                    - can go to any of the created tables to view data
+                        - whenever new data is added (eg. new users registered) from app

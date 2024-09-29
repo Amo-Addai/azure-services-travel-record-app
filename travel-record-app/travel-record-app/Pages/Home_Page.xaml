@@ -2,14 +2,8 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="travelrecordapp.Pages.SamplePage">
+    x:Class="travelrecordapp.Pages.Home_Page">
     <ContentPage.Content>
-
-        <StackLayout>
-
-            <Label>Sample Page</Label>
-
-        </StackLayout>
         
     </ContentPage.Content>
 </ContentPage>

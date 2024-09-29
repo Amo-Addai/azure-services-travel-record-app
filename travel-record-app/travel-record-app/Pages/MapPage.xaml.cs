@@ -6,9 +6,9 @@ using Xamarin.Forms.Maps; // todo
 using SQLite;
 // using .. CrossGeolocator, Plugin, Position (in .Maps)
 
-using travel_record_app.Models;
+using travelrecordapp.Models;
 
-namespace travel_record_app.Pages
+namespace travelrecordapp.Pages
 {	
 	public partial class MapPage : ContentPage
 	{	
@@ -38,8 +38,10 @@ namespace travel_record_app.Pages
 
             this.MoveToPosition(position);
 
+			List<Post> posts;
+
 			using
-				(
+				( // get posts from sqlite-db & display in map
 					SQLiteConnection conn =
 						new SQLiteConnection
 							(
@@ -48,14 +50,21 @@ namespace travel_record_app.Pages
 				)
 			{
 				conn.CreateTable<Post>();
-				var posts =
-					conn.Table<Post>()
-						.ToList();
+				posts = conn.Table<Post>()
+							.ToList();
 
 				DisplayInMap(posts);
 			}
-				
-		}
+
+            // get posts from Azure AppService's Easy table and display in map
+            posts = await App.MobileService
+							 .GetTable<Post>()
+							 .Where(
+								p => p.UserId == App.user.Id
+							 );
+            DisplayInMap(posts);
+
+        }
 
         protected override async void OnDisappearing()
         {

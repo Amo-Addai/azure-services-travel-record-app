@@ -6,9 +6,9 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using SQLite;
 
-using travel_record_app.Models;
+using travelrecordapp.Models;
 
-namespace travel_record_app.Pages
+namespace travelrecordapp.Pages
 {	
 	public partial class ProfilePage : ContentPage
 	{	
@@ -17,16 +17,24 @@ namespace travel_record_app.Pages
 			InitializeComponent ();
 		}
 
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
 
 			using(SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
-			{
+			{ // using sqlite-db connection, get Post table
 				var postTable =
 					conn
 						.Table<Post>()
 						.ToList();
+				// or get Post table from Azure AppService's Easy table - Post
+				postTable =
+					await App.MobileService
+							 .GetTable<Post>()
+							 .Where(
+								p => p.UserId == App.user.Id
+							 )
+							 .ToListAsync();
 
 				var categories = (
 						from p in postTable
@@ -65,7 +73,7 @@ namespace travel_record_app.Pages
 					categoriesCount.Add(category, count);
 				}
 
-				CategoriesListView.ItemSource = categoriesCount; // Key/Value Binding
+				CategoriesListView.ItemsSource = categoriesCount; // Key/Value Binding
 
 				PostCountLabel.Text = postTable.Count.ToString();
 			}

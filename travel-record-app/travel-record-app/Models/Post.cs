@@ -1,12 +1,13 @@
 ﻿using System;
 using SQLite;
 
-namespace travel_record_app.Models
+namespace travelrecordapp.Models
 {
 	public class Post
 	{
 		[PrimaryKey, AutoIncrement]
-		public int Id { get; set; }
+		public string Id { get; set; } // string Id used in both sqlite.db & Azure AppService's Easy tables
+		// public int Id { get; set; } // int Id used in sqlite.db only
 
 		[MaxLength(250)]
 		public string Experience { get; set; }
@@ -24,6 +25,8 @@ namespace travel_record_app.Models
 		public double Longitude { get; set; }
 
 		public int Distance { get; set; }
+
+		public string UserId { get; set; }
 
 	}
 }

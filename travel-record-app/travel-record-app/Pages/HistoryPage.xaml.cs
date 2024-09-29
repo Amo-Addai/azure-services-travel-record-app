@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 using SQLite;
 
-using travel_record_app.Models;
+using travelrecordapp.Models;
 
-namespace travel_record_app.Pages
+namespace travelrecordapp.Pages
 {	
 	public partial class HistoryPage : ContentPage
 	{	
@@ -15,27 +15,41 @@ namespace travel_record_app.Pages
 			InitializeComponent ();
 		}
 
-		protected override void OnAppearing()
+		protected override async void OnAppearing()
 		{
 			base.OnAppearing();
 
-			using
+			List<Post> posts;
+
+            using
 			(
 				SqliteConnection conn =
-				new SqliteConnection
-				(
-					App.DatabaseLocation
-				)
+					new SqliteConnection
+					(
+						App.DatabaseLocation
+					)
 			)
 			{
                 conn.CreateTable<Post>(); // todo: will only create-table if it doesn't already exist
 
-                var posts = conn.Table<Post>()
+                posts = conn.Table<Post>()
 								.ToList();
-				// conn.Close(); // * conn is closed by default after using-scope
+                // conn.Close(); // * conn is closed by default after using-scope
 
-				PostListView.ItemsSource = posts; // set ListView's data-context (data-binding for its ItemTemplate > DataTemplate)
+                // set PostListView's ItemsSource with sqlite-db Post-Table data
+                PostListView.ItemsSource = posts; // set ListView's data-context (data-binding for its ItemTemplate > DataTemplate)
             }
+
+			posts = await App.MobileService
+							 .GetTable<Post>()
+							 .Where(
+								p => p.UserId == App.user.Id
+							 )
+							 .ToListAsync();
+
+            // set PostListView's ItemsSource with Azure AppService Post-Table data
+            PostListView.ItemsSource = posts;
+
 		}
 
 	}

@@ -1,14 +1,28 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Microsoft.WindowsAzure.MobileServices;
 
-using travel_record_app.Pages;
+using travelrecordapp.Models;
+using travelrecordapp.Pages;
 
-namespace travel_record_app
+namespace travelrecordapp
 {
     public partial class App : Application
     {
+        // todo: choose 1 (or configure both seamlessly), for entire app
+        //  - Sqlite-db
+        //  - Azure AppService Easy Tables
+
         public static string DatabaseLocation = string.Empty;
+
+        // Azure AppService MobileServiceClient
+        public static MobileServiceClient MobileService =
+            new MobileServiceClient(
+                    "https://travelrecordapp.azurewebsites.net"
+                );
+
+        public static User user = new User();
 
         public App ()
         {

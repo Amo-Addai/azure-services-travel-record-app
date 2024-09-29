@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 
-namespace travel_record_app.Pages
+namespace travelrecordapp.Pages
 { // todo: 'CS0263: Partial declarations of 'HomePage' must not specify different base classes'
     public partial class HomePage : ContentPage
 	{	

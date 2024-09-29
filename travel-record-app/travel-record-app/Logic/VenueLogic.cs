@@ -4,14 +4,14 @@ using System.Net.Http;
 using System.Threading.Tasks;
 // using .. JsonConvert
 
-using travel_record_app.Models;
+using travelrecordapp.Models;
 
-namespace travel_record_app.Logic
+namespace travelrecordapp.Logic
 {
 	public class VenueLogic
 	{
 
-        public async static Task<List<Venue>> GetVenues
+        public static async Task<List<Venue>> GetVenues
 			(
 				double latitude, double longitude
 			)

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace travel_record_app.Helpers
+namespace travelrecordapp.Helpers
 {
 	public class Constants
 	{

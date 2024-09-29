@@ -5,10 +5,10 @@ using Xamarin.Forms;
 using SQLite;
 // using .. CrossGeolocator
 
-using travel_record_app.Models;
-using travel_record_app.Logic;
+using travelrecordapp.Models;
+using travelrecordapp.Logic;
 
-namespace travel_record_app.Pages
+namespace travelrecordapp.Pages
 {
 	// [XamlCompilation(XamlCompilationOptions.Compile)]
 	// * already imported in AssemblyInfo.cs
@@ -33,7 +33,7 @@ namespace travel_record_app.Pages
 			VenueListView.ItemsSource = venues;
         }
 
-        private void ToolbarItem_Clicked(object sender, EventArgs e)
+        private async void ToolbarItem_Clicked(object sender, EventArgs e)
 		{
 			try
 			{
@@ -54,10 +54,11 @@ namespace travel_record_app.Pages
 					Distance = selectedVenue.location.distance,
 					Latitude = selectedVenue.location.lat,
 					Longitude = selectedVenue.location.lng,
-					VenueName = selectedVenue.name
+					VenueName = selectedVenue.name,
+					UserId = App.user.Id // get user-id from parent App class's static user
 				};
 
-				using
+				using // insert post into sqlite-db
 					(
 						SQLiteConnection conn =
 							new SQLiteConnection
@@ -72,27 +73,32 @@ namespace travel_record_app.Pages
 					conn.Close(); // * faster runtime to close connection before working with return data
 
 					if (rows > 0)
-						DisplayAlert(
+						await DisplayAlert(
 							"Success",
 							"Experience successfully inserted",
 							"Ok"
 						);
 					else
-						DisplayAlert(
+						await DisplayAlert(
 							"Failure",
 							"Experience failed to be inserted",
 							"Ok"
 						);
 				}
+
+				// also insert post into Azure AppService's Easy table
+				await App.MobileService.GetTable<Post>().InsertAsync(post);
+				await DisplayAlert("Success", "Experience successfully inserted", "Ok");
+
 			}
 			catch (NullReferenceException ex)
 			{
-
-			}
+                await DisplayAlert("Failure", "Experience successfully inserted", "Ok");
+            }
 			catch (Exception ex)
 			{
-
-			}
+                await DisplayAlert("Failure", "Experience failed to be inserted", "Ok");
+            }
 
 		}
 

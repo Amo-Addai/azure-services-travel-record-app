@@ -6,7 +6,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace travel_record_app.iOS
+namespace travelrecordapp.iOS
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the 
     // User Interface of the application, as well as listening (and optionally responding) to 
@@ -26,7 +26,10 @@ namespace travel_record_app.iOS
             global::Xamarin.Forms.Forms.Init();
 
             // todo: install Xamarin.Forms.Maps NuGet package
-            // Xamarin.FormsMaps.Init(); // Maps Package
+            Xamarin.FormsMaps.Init(); // Maps Package
+
+            // initialize app's Azure Services
+            CurrentPlatform.Init();
 
             // todo: can be used in App(string) override
             string dbPath = Path.Combine(
@@ -40,7 +43,7 @@ namespace travel_record_app.iOS
                 "db_name.sqlite"
             );
 
-            LoadApplication(new App());
+            LoadApplication(new App(dbPath)); // new App() - app without dbPath
 
             return base.FinishedLaunching(app, options);
         }

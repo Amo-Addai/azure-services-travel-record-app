@@ -2,7 +2,7 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="travel_record_app.Pages.LoginPage">
+    x:Class="travelrecordapp.Pages.LoginPage">
 
     <ContentPage.Resources> <!-- resources for this page only -->
 
@@ -46,11 +46,10 @@
 
             <!-- WhiteColor & ButtonStyle - global app resources from App.xaml -->
             
-            <Button x:Name="SignupButton"
-                    Margin="0, 50, 0, 0"
-                    Text="Sign up"
-                    Style="{StaticResource ButtonStyle}"
-                    Clicked="SignupButton_Clicked" />
+            <Button x:Name="RegisterButton"
+                    Text="Register"
+                    HorizontalOptions="End"
+                    Clicked="RegisterButton_Clicked" />
 
         </StackLayout>
         
