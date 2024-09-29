@@ -8,9 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("travel-record-app.Pages.NewTravelPage.xaml", "Pages/NewTravelPage.xaml", typeof(global::travel_record_app.Pages.NewTravelPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("travel-record-app.Pages.NewTravelPage.xaml", "Pages/NewTravelPage.xaml", typeof(global::travelrecordapp.Pages.NewTravelPage))]
 
-namespace travel_record_app.Pages {
+namespace travelrecordapp.Pages {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Pages/NewTravelPage.xaml")]

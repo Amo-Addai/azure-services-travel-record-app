@@ -8,17 +8,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("travel-record-app.Pages.NewTravelTabbedPage.xaml", "Pages/NewTravelTabbedPage.xaml", typeof(global::travel_record_app.Pages.TabbedPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("travel-record-app.Pages.NewTravelTabbedPage.xaml", "Pages/NewTravelTabbedPage.xaml", typeof(global::travelrecordapp.Pages.NewTravelTabbedPage))]
 
-namespace travel_record_app.Pages {
+namespace travelrecordapp.Pages {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Pages/NewTravelTabbedPage.xaml")]
-    public partial class TabbedPage : global::Xamarin.Forms.TabbedPage {
+    public partial class NewTravelTabbedPage : global::Xamarin.Forms.TabbedPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(TabbedPage));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(NewTravelTabbedPage));
         }
     }
 }
